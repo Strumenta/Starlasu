@@ -4,51 +4,14 @@ title: Cross-Platform Parsers
 sidebar_label: Cross-Platform Parsers
 ---
 
-# Cross-Platform Parsers
+# Cross-platform parsers
 
-Cross-platform parsers in Starlasu enable you to build language tools that work across different programming environments and platforms.
+Different users may want to use our parsers from different platforms such as the browser, Python, the JVM, etc.
 
-## Platform Support
+On the other hand we want to avoid having to rewrite the parsers for the same languages across multiple platforms. For this reason we have developed an approach to use parsers across platforms. In essence, we write a parser for any platform we want, using Kolasu, Pylasu, or Tylasu. We then access the AST produced by such parsers on another platform by serializing the AST produced on one platform and unserializing it on another one. To make this possible we built tools to:
 
-### JVM Platform
-- **Java**: Native Java implementation
-- **Kotlin**: Kotlin-based implementation
-- **Scala**: Scala integration support
-- **Android**: Mobile development support
+- analyze the codebase of the original parser and extract a metamodel
+- generate AST classes on the other platforms from the metamodel
+- generate an AST unserializers from the metamodel
 
-### Web Platform
-- **Node.js**: Server-side JavaScript
-- **Browser**: Client-side JavaScript
-- **TypeScript**: Type-safe JavaScript
-- **WebAssembly**: High-performance web execution
-
-### Other Platforms
-- **Python**: Python implementation
-- **.NET**: C#, F#, VB.NET support
-- **Native**: C/C++ integration
-
-## Benefits
-
-- **Code Reuse**: Share parser logic across platforms
-- **Consistency**: Maintain consistent behavior across environments
-- **Flexibility**: Choose the best platform for each use case
-- **Ecosystem**: Leverage platform-specific tools and libraries
-
-## Implementation
-
-### Shared Components
-- **Grammar Definitions**: Platform-independent language specifications
-- **AST Models**: Common data structures across platforms
-- **Testing**: Shared test suites and validation
-
-### Platform-Specific Features
-- **Performance Optimization**: Platform-specific optimizations
-- **Tool Integration**: Native platform tool integration
-- **Library Ecosystem**: Platform-specific library usage
-
-## Use Cases
-
-- **Multi-Platform Tools**: Tools that work on multiple platforms
-- **Language Servers**: Cross-platform language intelligence
-- **Code Analysis**: Platform-independent code analysis
-- **Documentation**: Generate docs for multiple platforms 
+In this way we could write a parser for RPG in Kotlin, using Kolasu. We would then automatically generate equivalent AST classes in Pylasu, and code to unserialize an AST instantiating those AST classes. In the end, we would obtain a parser usable from Python, which expose AST classes in Python. The implementation would call the parser written in Kotlin, obtain the AST serialized and unserialize it behind the scenes.

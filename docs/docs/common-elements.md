@@ -4,50 +4,16 @@ title: Common Elements
 sidebar_label: Common Elements
 ---
 
-# Common Elements
+# AST Common Elements
 
-Common elements in Starlasu provide shared functionality and utilities that are used across different language engineering tools.
+Most programming languages share some concepts. We identified these common concepts and defined marker types for them. In this way, we can treat these elements similary in all languages.
 
-## Core Components
+They are:
 
-### AST Nodes
-- **Base Classes**: Common functionality for all AST nodes
-- **Position Tracking**: Source location information
-- **Serialization**: Standard serialization support
-- **Validation**: Common validation rules
+* Statement: for example print statements, expression statements, or return statements
+* Expression: for example, literals, mathematical expressions, boolean expressions
+* Entity Declaration: for example, class declarations, top level function declarations
 
-### Utilities
-- **String Handling**: Text processing utilities
-- **File Operations**: File reading and writing
-- **Error Handling**: Standard error reporting
-- **Logging**: Logging and debugging support
+_See in [Kolasu](https://github.com/Strumenta/kolasu/blob/main/ast/src/commonMain/kotlin/com/strumenta/kolasu/model/CommonElements.kt)_
 
-## Shared Patterns
-
-### Design Patterns
-- **Visitor Pattern**: Standard AST traversal
-- **Builder Pattern**: AST construction utilities
-- **Factory Pattern**: Node creation helpers
-- **Observer Pattern**: Change notification
-
-### Common Operations
-- **AST Traversal**: Standard traversal algorithms
-- **Node Comparison**: AST comparison utilities
-- **Copy Operations**: Deep copying and cloning
-- **Merge Operations**: AST merging utilities
-
-## Benefits
-
-- **Code Reuse**: Share common functionality across tools
-- **Consistency**: Maintain consistent behavior
-- **Maintenance**: Centralize common code
-- **Testing**: Shared test utilities
-
-## Implementation
-
-Starlasu provides:
-
-- **Base Classes**: Common base classes for all implementations
-- **Utility Libraries**: Shared utility functions
-- **Standard Interfaces**: Common interfaces and contracts
-- **Testing Support**: Shared testing utilities 
+_This is not yet supported in other StarLasu libraries._

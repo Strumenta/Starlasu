@@ -6,32 +6,21 @@ sidebar_label: EMF Interoperability
 
 # EMF Interoperability
 
-EMF (Eclipse Modeling Framework) interoperability in Starlasu enables integration with the Eclipse ecosystem and EMF-based tools.
+The Eclipse Modeling Framework (EMF) has been very successful in the MDE world. It can be regarded as an exchange format supported by different tools.
 
-## EMF Integration
+For this reason we built support for exporting Metamodels and Models to EMF. We in particular support the serialization to EMF-JSON. EMF-JSON is not as
+well-defined and supported as XMI (based on XML), but the request for JSON-based formats on some of the platforms supported brought us to focus on it.
 
-### Model Exchange
-- **ECore Models**: Import and export EMF Ecore models
-- **XMI Serialization**: Exchange models in XMI format
-- **Model Validation**: Use EMF validation frameworks
+In our case, _metamodels_ are the definition of the node types. For example, they specify which properties each node has.
 
-### Tool Integration
-- **Eclipse Plugins**: Build Eclipse-based language tools
-- **EMF Editors**: Create visual model editors
-- **Model Transformations**: Use EMF transformation frameworks
+Instead, we can represent and serialize ASTs as _models_ (i.e., instances of metamodels). A model describes the value of each node's properties, and the
+relationships among the nodes.
 
-## Benefits
+In some of the StarLasu libraries, we can also _import_ EMF metamodels and models (generated with other StarLasu libraries)
+in order to _consume_ the results of a tool (e.g. a parser) from a different language. This is what the
+[Strumenta Playground](https://playground.strumenta.com/) web app does, for example. This is also useful for [cross-platform parsers](parsers-cross-platform.md).
 
-- **Eclipse Ecosystem**: Leverage existing Eclipse tools and plugins
-- **Visual Modeling**: Create graphical model editors
-- **Standards Compliance**: Follow EMF modeling standards
-- **Tool Integration**: Work with EMF-based development tools
-
-## Implementation
-
-Starlasu provides:
-
-- **ECore Adapters**: Convert between Starlasu and EMF models
-- **XMI Support**: Import/export models in XMI format
-- **Validation Integration**: Use EMF validation with Starlasu models
-- **Editor Support**: Create EMF-based visual editors 
+Read more about this topic in:
+- [Kolasu](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-emf/latest/index.html) ([source code](https://github.com/Strumenta/kolasu/tree/master/emf))
+- [Pylasu](https://pylasu.readthedocs.io/en/latest/pylasu.emf.html) ([source code](https://github.com/Strumenta/pylasu/tree/master/pylasu/emf)) _note: support in Pylasu is a work in progress._
+- [Tylasu](https://strumenta.github.io/tylasu/modules/interop_ecore.html) ([source code](https://github.com/Strumenta/tylasu/blob/master/src/interop/ecore.ts))

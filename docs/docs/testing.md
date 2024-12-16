@@ -6,54 +6,25 @@ sidebar_label: Testing
 
 # Testing
 
-Testing is crucial for ensuring the reliability and correctness of language engineering tools built with Starlasu.
+StarLasu offers support for comparing parse trees and ASTs.
 
-## Testing Strategies
+See `assertParseTreeStr`, `assertParsingResultsAreEqual`, and `assertASTsAreEqual` in Kolasu.
 
-### Unit Testing
-- **AST Construction**: Test individual AST node creation
-- **Parser Components**: Test grammar rules and parsing logic
-- **Transformations**: Test AST transformation functions
-- **Code Generation**: Test output generation logic
+## Coverage of the grammar
 
-### Integration Testing
-- **End-to-End Parsing**: Test complete parsing pipelines
-- **Round-Trip Validation**: Parse → Generate → Re-parse
-- **Cross-Platform**: Test across different Starlasu implementations
+Related to this, there is experimental support for verifying the Coverage of a grammar by the examples we have. See [CoverageListener](https://github.com/Strumenta/kolasu/blob/master/core/src/main/kotlin/com/strumenta/kolasu/parsing/coverage/CoverageListener.kt) in Kolasu.
 
-### Performance Testing
-- **Large File Handling**: Test with substantial codebases
-- **Memory Usage**: Monitor resource consumption
-- **Response Time**: Measure parsing and generation speed
+The goal is that, given a grammar and a set of examples, we want to understand:
 
-## Testing Tools
+- How many possible paths in the grammar are covered
+- Which alternatives are not covered, so that we can look for appropriate examples
 
-Starlasu provides:
+Another solution is to verify the coverage of the generated ANTLR Parser.
 
-- **Test Utilities**: Helper functions for common testing scenarios
-- **AST Comparison**: Tools for comparing AST structures
-- **Mock ASTs**: Create test fixtures easily
-- **Performance Benchmarks**: Measure tool performance
+## Performance testing
 
-## Best Practices
+_To be written._
 
-- **Test Coverage**: Aim for comprehensive coverage of edge cases
-- **Regression Testing**: Ensure new features don't break existing functionality
-- **Property-Based Testing**: Use generative testing for complex scenarios
-- **Continuous Integration**: Automate testing in your build pipeline
+## Test the parser on examples
 
-## Example Test
-
-```kotlin
-@Test
-fun testFunctionParsing() {
-    val source = "fun hello() { println('world') }"
-    val ast = parser.parse(source)
-    
-    assertNotNull(ast)
-    assertTrue(ast.root is FunctionDeclaration)
-    
-    val function = ast.root as FunctionDeclaration
-    assertEquals("hello", function.name)
-}
-``` 
+In practice it is often convenient to run the parser on a larget set of examples and just check if the parser can handle them without finding errors.

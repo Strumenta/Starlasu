@@ -6,46 +6,22 @@ sidebar_label: Semantic Enrichment
 
 # Semantic Enrichment
 
-Semantic enrichment in Starlasu adds meaning and context to ASTs beyond their syntactic structure, enabling deeper code analysis and understanding.
+People who are new to parser development may attempt to enforce grammar-level type coherence. For example, defining that a variable declared with type int can only have a subset of the expression types as its initial value, that doesn't work and can increase the complexity of writing a grammar and still not obtaining the desired constraints.
 
-## What is Semantic Enrichment?
+In general, it is preferable to be less strict in the grammar and Parse Tree to AST Mapping, identifying discrepancies as the final AST processing step.
 
-Semantic enrichment adds:
+The benefits of doing so are:
 
-- **Symbol Information**: Resolved references and definitions
-- **Type Information**: Computed types for expressions
-- **Scope Information**: Variable and function scoping details
-- **Semantic Metadata**: Additional context and annotations
+- Simpler grammars;
+- Better error messages;
 
-## Enrichment Process
+Semantic checks are the mechanisms that are meant to check/identify possible discrepancies in a syntactically correct input. It is an advanced feature and it is not implemented in most parsers, only when specifically requested/needed.
 
-### Symbol Resolution
-- **Reference Resolution**: Connect references to definitions
-- **Scope Analysis**: Determine symbol visibility and lifetime
-- **Import Resolution**: Handle imported symbols and namespaces
+## Semantic Checks
 
-### Type Analysis
-- **Type Inference**: Determine types from context and usage
-- **Type Checking**: Validate type compatibility
-- **Generic Resolution**: Handle parameterized types
-
-### Context Analysis
-- **Control Flow**: Analyze program execution paths
-- **Data Flow**: Track data movement through the program
-- **Dependencies**: Identify relationships between components
-
-## Benefits
-
-- **Better Analysis**: Enable advanced code analysis tools
-- **IDE Features**: Support for refactoring and navigation
-- **Documentation**: Generate accurate API documentation
-- **Optimization**: Enable code optimization opportunities
-
-## Implementation
-
-Starlasu provides:
-
-- **Enrichment Pipeline**: Framework for building enrichment processes
-- **Symbol Tables**: Efficient symbol storage and lookup
-- **Type System**: Framework for type analysis
-- **Performance Optimization**: Efficient enrichment algorithms 
+- [](SymbolResolution.md);
+- Type System checks;
+- Other checks such as:
+    - Two symbols with the same name declared in the same scope;
+    - Variables used before being declared;
+    - etc...

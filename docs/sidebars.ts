@@ -39,6 +39,7 @@ const sidebars: SidebarsConfig = {
                     label: 'Code Models',
                     items: [
                         'position',
+                        'naming',
                         'origin-and-destination',
                         'common-elements',
                         'ast-representation',

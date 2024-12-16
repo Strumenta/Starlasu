@@ -6,28 +6,9 @@ sidebar_label: Serialization
 
 # Serialization
 
-Serialization in Starlasu allows you to convert ASTs to and from various formats for storage, transmission, or analysis purposes.
+In addition to what is described here, there is also EMF serialization, which is discussed separately. See [EMF](EMFInteroperability.md).
 
-## Supported Formats
+StarLasu Tools supports exporting ASTs to JSON and XML.
+Additionally, [kolasu](https://github.com/Strumenta/kolasu/blob/main/lionweb/src/main/kotlin/com/strumenta/kolasu/lionweb/LionWebModelConverter.kt) and [tylasu](https://github.com/Strumenta/tylasu/blob/master/src/interop/lionweb.ts) support import/export from the LionWeb format
 
-Starlasu provides serialization support for:
-
-- **JSON**: Human-readable format for debugging and data exchange
-- **Binary**: Compact format for efficient storage and transmission
-- **XML**: Standard format for integration with other tools
-
-## Usage
-
-Serialization is typically handled through the Starlasu libraries, which provide:
-
-- Automatic serialization of AST nodes
-- Custom serialization for specific node types
-- Deserialization with validation
-- Support for circular references
-
-## Benefits
-
-- **Persistence**: Save ASTs to files or databases
-- **Debugging**: Inspect AST structure in human-readable format
-- **Integration**: Exchange ASTs with other tools and systems
-- **Testing**: Create test fixtures from serialized ASTs 
+_See in [Kolasu](https://github.com/Strumenta/kolasu/tree/main/serialization/src/main/kotlin)_.
