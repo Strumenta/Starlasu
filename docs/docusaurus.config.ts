@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'The Starlasu Approach',
-  tagline: 'A flexible, systematic, and extensible framework for Language Engineering',
+  title: 'The Starlasu Framework',
+  tagline: 'An opionated framework for building advanced Language Engineering systems',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -94,15 +94,15 @@ const config: Config = {
             },
             {
               label: 'Features',
-              to: '/docs/category/features',
+              to: '/docs/features',
             },
             {
               label: 'Methods',
-              to: '/docs/category/methods',
+              to: '/docs/methods',
             },
             {
               label: 'Use Cases',
-              to: '/docs/category/use-cases',
+              to: '/docs/use-cases',
             },
           ],
         },

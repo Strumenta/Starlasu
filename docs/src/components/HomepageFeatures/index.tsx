@@ -10,7 +10,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Flexible Framework',
+    title: 'Comprehensive',
     Svg: require('@site/static/img/Star.svg').default,
     description: (
       <>
@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/Star.svg').default,
     description: (
       <>
-        Use Starlasu on JVM (Kolasu), Node.js (Tylasu), Python (Pylasu), and .NET (Sharplasu) with consistent APIs.
+        Use Starlasu on JVM (Kolasu), Node.js (Tylasu), the browser (Tylasu), Python (Pylasu), and .NET (Sharplasu) with consistent APIs.
       </>
     ),
   },
@@ -32,7 +32,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/Star.svg').default,
     description: (
       <>
-        Leverage the Chisel Method and other proven approaches developed from hundreds of language engineering projects.
+        Leverage the Chisel Method and other proven approaches developed from over a decade of experience working on
+          language engineering projects with clients from all over the world.
       </>
     ),
   },
