@@ -28,3 +28,36 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+div.feature {
+    max-width: 27em;
+    padding: 3em;
+    border-radius: 1em;
+    border: 1px solid var(--ifm-color-primary);
+    background-color: #f9f9f9; /* light grey so it stands out from white */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: auto;
+}
+
+div.feature:hover {
+    transform: translateY(-4px); /* small lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+div.feature div.content {
+    /*max-width: 20em;*/
+}
+
+.row {
+    gap: 3em; /*!* adjust as needed *!*/
+}
+
+.row > .featureHolder {
+    flex: 1 1 calc(50% - 3em); /* if you have 3 per row */
+    text-align: center;
+}
+
+.feature {
+
+}
