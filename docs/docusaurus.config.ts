@@ -66,7 +66,7 @@ const config: Config = {
       title: 'Starlasu',
       logo: {
         alt: 'Starlasu Logo',
-        src: 'img/logo.svg',
+        src: 'img/starlasu-logo.png',
       },
       items: [
         {
