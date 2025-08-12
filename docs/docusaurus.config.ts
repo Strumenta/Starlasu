@@ -106,12 +106,33 @@ const config: Config = {
             },
           ],
         },
+          {
+              title: 'Libraries',
+              items: [
+                  {
+                      label: 'Kolasu',
+                      href: 'https://github.com/Strumenta/kolasu',
+                  },
+                  {
+                      label: 'Tylasu',
+                      href: 'https://github.com/Strumenta/tylasu',
+                  },
+                  {
+                      label: 'Pylasu',
+                      href: 'https://github.com/Strumenta/pylasu',
+                  },
+                  {
+                      label: 'Sharplasu',
+                      href: 'https://github.com/Strumenta/sharplasu',
+                  },
+              ],
+          },
         {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/strumenta/starlasu',
+              label: 'LionWeb',
+              href: 'https://lionweb.io',
             },
             {
               label: 'Strumenta',
