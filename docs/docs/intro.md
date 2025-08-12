@@ -20,10 +20,10 @@ The goal is to be able to define arbitrary Language Engineering applications, an
 of this approach.
 
 Concretely, the most common applications we write using these methods are:
-1. **Domain-Specific Languages (DSLs)**: We define new tailored languages for specific domains with accompanying editors and execution engines (either interpreters or code generators).
-2. **Transpilers**: Applications that translate code from one language to another. Typically from a legacy language such as RPG to a modern one such as Java.
-3. **Parsers**: Tools that generate Code Models for code analysis, documentation generation, or as the initial step of 
-transpilers. We typically implements these Parsers that are then used to build code analysis tools, transpilers, or other systems. 
+
+1. **Transpilers**: Applications that translate code from one language to another. Typically from a legacy language such as RPG to a modern one such as Java.
+2. **Domain-Specific Languages (DSLs)**: We define new tailored languages for specific domains with accompanying editors and execution engines (either interpreters or code generators).
+3. **Code Analysis Solutions**: You can analyze applications to answer questions about them and possibly to modify them. For example, to identify dead code, refactor GOTO statements in proper control-flow statements, or identify usages of a certain library within your system.
 
 ## Architectural Overview
 
