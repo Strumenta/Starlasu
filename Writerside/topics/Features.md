@@ -1,3 +1,0 @@
-# Features
-
-Start typing here...
