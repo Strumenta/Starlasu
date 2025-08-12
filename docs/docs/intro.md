@@ -4,24 +4,28 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-# The Starlasu Approach
+# The Starlasu Framework
 
-The Starlasu approach provides a flexible, systematic, and extensible framework for creating tools like parsers, 
-transpilers, code analyzers, interpreters, code generators, and domain-specific languages (DSLs). 
+The Starlasu framework is designed to provide a flexible, systematic, and extensible solution for creating 
+advanced Language Engineering solutions.
+These solutions typically require to create and combine several components such as parsers, transpilers, code analyzers,
+interpreters, code generators, and editors.
+
+The Starlasu Framework aims to provide a solution to build all of these components, based on clearly stated design principles.
 
 The Starlasu approach was developed at [Strumenta](https://strumenta.com), drawing on a decade of experience in Language 
 Engineering projects. 
 It reflects lessons learned about what works and what doesn't, 
 combining this expertise to deliver reliable and adaptable language processing systems.
 
-## What can you do with The Starlasu approach?
+## What can you accomplish with Starlasu?
 
-The goal is to be able to define arbitrary Language Engineering applications, and flexibility is the main goal
+The goal when using Starlasu is to be able to define arbitrary Language Engineering applications, and flexibility is the main goal
 of this approach.
 
 Concretely, the most common applications we write using these methods are:
 
-1. **Transpilers**: Applications that translate code from one language to another. Typically from a legacy language such as RPG to a modern one such as Java.
+1. **Migrate Code**: Starlasu supports the creation of transpilers, applications that translate code from one language to another. Typically from a legacy language such as RPG to a modern one such as Java. It is also possible to transform code while maintaining the same language (e.g., changing Java framework).
 2. **Domain-Specific Languages (DSLs)**: We define new tailored languages for specific domains with accompanying editors and execution engines (either interpreters or code generators).
 3. **Code Analysis Solutions**: You can analyze applications to answer questions about them and possibly to modify them. For example, to identify dead code, refactor GOTO statements in proper control-flow statements, or identify usages of a certain library within your system.
 

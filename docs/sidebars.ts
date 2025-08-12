@@ -15,10 +15,17 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     {
-      type: 'doc',
-      id: 'intro',
+      type: 'category',
       label: 'Introduction',
+        link: {
+            type: 'doc',
+            id: 'intro',
+        },
+        items: [
+            'pipeline'
+        ]
     },
+
     {
       type: 'category',
       label: 'Features',
@@ -27,19 +34,6 @@ const sidebars: SidebarsConfig = {
         id: 'features',
       },
       items: [
-        'serialization',
-        'position',
-        'origin-and-destination',
-        'parse-tree-to-ast-mapping',
-        'naming',
-        'cross-platform-parsers',
-        'common-elements',
-        'transformation-framework',
-        'code-generation',
-        'dual-code-model-apis',
-        'documentation-generation',
-        'testing',
-        'ast-traversal-and-querying',
         {
           type: 'category',
           label: 'Interoperability',
@@ -49,14 +43,58 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'emf-interoperability',
+              'lionweb-interoperability',
+              'treesitter-interoperability',
+              'antlr-interoperability',
+              'javaparser-interoperability'
           ],
         },
-        'semantic-enrichment',
+          {
+              type: 'category',
+              label: 'Code Models',
+              items: [
+                  'position',
+                  'origin-and-destination',
+                  'common-elements',
+                  'ast-representation',
+              ]
+          },
+          {
+              type: 'category',
+              label: 'Parsers',
+              items: [
+                  'parse-tree-to-ast-mapping',
+                  'documentation-generation',
+                  'testing',
+                  'cross-platform-parsers',
+              ]
+          },
+          {
+              type: 'category',
+              label: 'Semantic Enrichment',
+              link: {
+                  type: 'doc',
+                  id: 'semantic-enrichment',
+              },
+              items: [
+                  'symbol-resolution',
+                  'type-checking',
+              ]
+          },
+          {
+              type: 'category',
+              label: 'APIs',
+              items: [
+                  'serialization',
+                  'code-generation',
+                  'dual-code-model-apis',
+                  'ast-traversal-and-querying',
+                  'transformation-framework',
+                  'validation',
+              ]
+          },
         'editor-support',
-        'ast-representation',
-        'validation',
-        'symbol-resolution',
-        'type-checking',
+
       ],
     },
     {

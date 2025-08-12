@@ -1,10 +1,10 @@
 ---
 id: transformation-framework
-title: Transformation Framework
-sidebar_label: Transformation Framework
+title: Transformation APIs
+sidebar_label: Transformation APIs
 ---
 
-# Transformation Framework
+# Transformation APIs
 
 The Transformation Framework in Starlasu provides tools and patterns for transforming ASTs from one form to another.
 
