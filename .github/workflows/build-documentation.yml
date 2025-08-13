@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -25,32 +26,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: ${{ hashFiles('**/yarn.lock') && 'yarn' || (hashFiles('**/pnpm-lock.yaml') && 'pnpm' || 'npm') }}
+          cache: npm
 
       - name: Install dependencies
+        working-directory: ./docs
         run: |
-          if [ -f yarn.lock ]; then
-            corepack enable
-            yarn --frozen-lockfile
-          elif [ -f pnpm-lock.yaml ]; then
-            corepack enable
-            pnpm install --frozen-lockfile
-          else
-            npm ci
-          fi
+          npm ci
 
-      - name: Type check (optional)
+      - name: Type check
+        working-directory: ./docs
         run: |
-          if [ -f tsconfig.json ]; then npx tsc -b --pretty false; fi
+          npx tsc -b
 
       - name: Build Docusaurus
+        working-directory: ./docs
         run: npx docusaurus build --no-minify
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: docusaurus-build
-          path: build
+          path: docs/build
           retention-days: 7
 
       # Preview deploy for PRs
