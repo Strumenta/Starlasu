@@ -17,6 +17,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
     outputs:
       preview_url: ${{ steps.netlify_preview.outputs.preview_url }}
     steps:
@@ -27,19 +30,17 @@ jobs:
         with:
           node-version: 18
           cache: npm
+          cache-dependency-path: docs/package-lock.json
 
       - name: Install dependencies
-        working-directory: ./docs
         run: |
           npm ci
 
       - name: Type check
-        working-directory: ./docs
         run: |
           npx tsc -b
 
       - name: Build Docusaurus
-        working-directory: ./docs
         run: npx docusaurus build --no-minify
 
       - name: Upload build artifact
