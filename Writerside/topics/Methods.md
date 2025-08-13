@@ -1,3 +1,0 @@
-# Methods
-
-Start typing here...
