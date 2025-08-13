@@ -18,7 +18,7 @@ relationships among the nodes.
 
 In some of the StarLasu libraries, we can also _import_ EMF metamodels and models (generated with other StarLasu libraries)
 in order to _consume_ the results of a tool (e.g. a parser) from a different language. This is what the
-[Strumenta Playground](https://playground.strumenta.com/) web app does, for example. This is also useful for [cross-platform parsers](parsers-cross-platform.md).
+[Strumenta Playground](https://playground.strumenta.com/) web app does, for example. This is also useful for [cross-platform parsers](cross-platform-parsers).
 
 Read more about this topic in:
 - [Kolasu](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-emf/latest/index.html) ([source code](https://github.com/Strumenta/kolasu/tree/master/emf))

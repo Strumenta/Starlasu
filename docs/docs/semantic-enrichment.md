@@ -19,7 +19,7 @@ Semantic checks are the mechanisms that are meant to check/identify possible dis
 
 ## Semantic Checks
 
-- [](SymbolResolution.md);
+- [Symbol Resolution](symbol-resolution);
 - Type System checks;
 - Other checks such as:
     - Two symbols with the same name declared in the same scope;

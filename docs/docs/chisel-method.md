@@ -15,7 +15,7 @@ The Chisel method is based on the following principles:
 1. We define a clear goal, which is shared by the Client and the Language Engineering Team. This goal is objective, and it is not subject to interpretation.
 2. At each step, the Language Engineering Team should clearly understand where we are and what should be done next - parsing and then refining the produced AST. Tool support should facilitate each single step, removing friction due to repetitive tasks. For this the StarLasu Libraries can be used since it provides user-friendly APIs for seamless integration as well as cross-language integration.
 3. Ensure frictionless adoption by providing all support needed to facilitate the adoption of the parser inside a Language Engineering Pipeline. By automatically generating documentation and having a method that simplifies training processes.
-   ![image.png](chiselMethod.png)
+   ![image.png](../static/img/chiselMethod.png)
 
 The Chisel method is based on the following steps:
 
