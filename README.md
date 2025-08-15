@@ -1,4 +1,4 @@
-# StarLasu
+# Starlasu
 
 The Starlasu approach provides a flexible, systematic, and extensible framework for creating tools like parsers, 
 transpilers, code analyzers, interpreters, code generators, and domain-specific languages (DSLs).
